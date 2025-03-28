@@ -73,7 +73,15 @@ public class Guacamaya {
         } while (!salir);
 
     }
-
+/**
+     * Descripcion: Este metodo se encarga de preguntar al usuario el numero de referencias de producto diferentes 
+     * vendidas en el dia e inicializa con ese valor los arreglos encargados de almacenar precios y cantidades
+     * pre: El Scanner reader debe estar inicializado
+     * pre: Los arreglos precios y unidades deben estar declarados
+     * pos: Los arreglos precios y unidades quedan inicializados
+     * @param
+     * @return cantidad vendida
+     */
 
     public static void establecerCantidadVendida() {
 
