@@ -2,11 +2,9 @@ package ui;
 
 import java.util.Scanner;
 
-public class Guacamaya {
+public class Atlaspuntuaciones {
 
-    // Scanner global para todo el programa
     public static Scanner reader;
-    // Arreglos de precios y unidades para todo el programa
     public static double[] precios;
     public static int[] unidades;
 
@@ -101,37 +99,71 @@ public class Guacamaya {
         unidades = new int[referencias];
 
     }
+    /**
+     * Descripcion: Este metodo pide al usuario y guarda los valores de las referencias y el numero de ventas de cada una en los diferentes  arreglos,(precios y unidades).
+     */
 
     public static void solicitarDatos(){
+        for(int i = 0; i < precios.length; i++){
+            System.out.println("Por favor digite el valor de la referecia "+(i+1)+":");
+            precios[i]=reader.nextDouble();
+            System.out.println("Por favor digite el numero de ventas de la referecia "+(i+1)+":");
+            unidades[i]=reader.nextInt();
 
-        
+        }
+
      
     }
+    /**
+     * Descripcion: Este metodo calcula el total de unidades vendidas,de todas las referencias,sumando cada cantidad de la referencia del arreglo unidades.
+     * @return devuelve el total de unidades vendidas.
+     */
 
     public static int calcularTotalUnidadesVendidas(){
 
-        return 0;
+        int total_unidades=0;
+        for(int i =0;i<unidades.length;i++){
+            total_unidades = unidades[i];
+        }
 
+
+        return total_unidades;
 
     }
+    /**
+     * Descripcion: Este metodo calcula el precio promedio de las ventas del dia.
+     * @return devuelve el promedio de las ventas del dia,dividiendo la suma de todos los precios entre la longitud del arrreglo,precios.
+     */
 
     public static double calcularPrecioPromedio(){
+        double suma_precios=0;
+        for(int i=0;i<precios.length;i++){
+            suma_precios += precios[i];
+        }
 
-        return 0;
-
+        return suma_precios/precios.length;
 
     }
 
     public static double calcularVentasTotales(){
+        double total_ventas=0;
+        for(int i=0;i<precios.length;i++){
+            total_ventas += precios[i]*unidades[i];
+        }
 
-        return 0;
-
+        return total_ventas;
 
     }
 
     public static int consultarReferenciasSobreLimite(double limite){
+        int num_productos=0;
+        for(int i=0;i<precios.length;i++){
+            if(precios[i]*unidades[i] > limite){
+                num_productos++;
+            }
+        }
 
-        return 0;
+        return num_productos;
 
     }
 
