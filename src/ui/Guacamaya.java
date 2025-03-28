@@ -2,7 +2,7 @@ package ui;
 
 import java.util.Scanner;
 
-public class Atlaspuntuaciones {
+public class Guacamaya {
 
     public static Scanner reader;
     public static double[] precios;
@@ -14,22 +14,13 @@ public class Atlaspuntuaciones {
         menu();
     }
 
-    /**
-     * Descripcion: Este metodo se encarga de iniciar las variables globales
-     * pre: El Scanner reader debe estar declarado
-     * pos: l Scanner reader queda inicializado
-    */
+    
     public static void inicializarGlobales() {
 
         reader = new Scanner(System.in);
 
     }
 
-    /**
-     * Descripcion: Este metodo se encarga de desplegar el menu al usuario y mostrar los mensajes de resultado para cada funcionalidad
-     * pre: El Scanner reader debe estar inicializado
-     * pre: El arreglo precios debe estar inicializado
-    */
     public static void menu() {
 
         System.out.println("Bienvenido a Guacamaya!");
@@ -83,13 +74,7 @@ public class Atlaspuntuaciones {
 
     }
 
-    /**
-     * Descripcion: Este metodo se encarga de preguntar al usuario el numero de referencias de producto diferentes 
-     * vendidas en el dia e inicializa con ese valor los arreglos encargados de almacenar precios y cantidades
-     * pre: El Scanner reader debe estar inicializado
-     * pre: Los arreglos precios y unidades deben estar declarados
-     * pos: Los arreglos precios y unidades quedan inicializados
-     */
+
     public static void establecerCantidadVendida() {
 
         System.out.println("\nDigite el numero de referencias de producto diferentes vendidas en el dia ");
@@ -123,7 +108,7 @@ public class Atlaspuntuaciones {
 
         int total_unidades=0;
         for(int i =0;i<unidades.length;i++){
-            total_unidades = unidades[i];
+            total_unidades += unidades[i];
         }
 
 
